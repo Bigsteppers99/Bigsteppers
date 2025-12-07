@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezechukwu Anuebunwa - Product Manager</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #f7fafc;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: #4a5568;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        section {
+            padding: 60px 20px;
+        }
+        
+        section:nth-child(even) {
+            background: white;
+        }
+        
+        h2 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #1a202c;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            border-left: 4px solid #667eea;
+        }
+        
+        .project-card h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #2d3748;
+        }
+        
+        .project-meta {
+            color: #718096;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .metric-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .metric-box .number {
+            font-size: 2.5em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .metric-box .label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .skill-category {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .skill-category h4 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        
+        .skill-category ul {
+            list-style: none;
+        }
+        
+        .skill-category li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        
+        .skill-category li:last-child {
+            border-bottom: none;
+        }
+        
+        .evidence-section {
+            background: #edf2f7;
+            padding: 30px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .evidence-section h4 {
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+        
+        .evidence-list {
+            list-style: none;
+        }
+        
+        .evidence-list li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .evidence-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #48bb78;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .cta-section h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .learning-section {
+            background: #fff5f5;
+            border-left: 4px solid #fc8181;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .learning-section h4 {
+            color: #c53030;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            header p {
+                font-size: 1.1em;
+            }
+            
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Ezechukwu Immanuel Anuebunwa</h1>
+            <p>Product Manager | Founder | Building products people actually want</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#goalfi">GoalFi Games</a></li>
+            <li><a href="#pluggedin">PluggedIn</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <div class="container section-content">
+            <h2>From Zero Budget to 44,000 Users</h2>
+            <p style="font-size: 1.2em; text-align: center; color: #4a5568; margin-bottom: 30px;">
+                I'm a product manager who learned by doing—not from textbooks, but from launching real products, 
+                acquiring real users, and learning from real failures. My approach combines scrappy execution 
+                with strategic thinking, always focused on solving actual user problems.
+            </p>
+            <div class="metrics">
+                <div class="metric-box">
+                    <span class="number">44K+</span>
+                    <span class="label">Users Acquired</span>
+                </div>
+                <div class="metric-box">
+                    <span class="number">$0</span>
+                    <span class="label">Marketing Budget</span>
+                </div>
+                <div class="metric-box">
+                    <span class="number">$53K</span>
+                    <span class="label">Peak Market Cap</span>
+                </div>
+                <div class="metric-box">
+                    <span class="number">1K+</span>
+                    <span class="label">Community Members</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="goalfi">
+        <div class="container">
+            <h2>Case Study: GoalFi Games</h2>
+            <div class="project-card">
+                <h3>Building a Web3 Gaming Platform from Scratch</h3>
+                <p class="project-meta">March 2024 - August 2024 | Founder & Product Lead</p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 15px;">The Problem</h4>
+                <p>
+                    Gamers constantly debate who's better at football games, but there was no way to back up claims 
+                    with real stakes. I wanted to create a platform where gamers could "put their money where their 
+                    mouth is"—betting on their own skills, not just luck.
+                </p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 15px;">The Solution</h4>
+                <p>
+                    GoalFi Games: A Web3-integrated football gaming platform where players use $GOLS tokens to 
+                    bet on skill-based matches, buy players, and earn rewards. Built on BSC blockchain for 
+                    transparent, verifiable transactions.
+                </p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 15px;">My Approach (Learning PM by Doing)</h4>
+                <ul style="margin: 20px 0; padding-left: 20px;">
+                    <li style="margin: 10px 0;"><strong>Started with MVP:</strong> Launched the token first to validate demand before building the full gaming platform</li>
+                    <li style="margin: 10px 0;"><strong>Growth Hacking:</strong> Designed viral mechanics through airdrop campaigns and referral incentives</li>
+                    <li style="margin: 10px 0;"><strong>Community-First:</strong> Built engaged community on Telegram and X (Twitter) before product launch</li>
+                    <li style="margin: 10px 0;"><strong>Data-Driven Iteration:</strong> Monitored user feedback and engagement metrics to guide feature decisions</li>
+                    <li style="margin: 10px 0;"><strong>Lean Execution:</strong> Tested assumptions quickly with zero budget, pivoted based on what worked</li>
+                </ul>
+                
+                <div class="evidence-section">
+                    <h4>Evidence & Proof Points</h4>
+                    <ul class="evidence-list">
+                        <li>44,000+ user signups via Google Forms (data file available)</li>
+                        <li>Active X (Twitter) account with campaign history</li>
+                        <li>Smart contract deployed on BSC blockchain (verifiable on-chain)</li>
+                        <li>Telegram community grew to 1,000+ active members</li>
+                        <li>Peak token market cap of $53,000</li>
+                        <li>Original website (can be reactivated by renewing hosting)</li>
+                    </ul>
+                </div>
+                
+                <div class="learning-section">
+                    <h4>What I Learned (The Hard Way)</h4>
+                    <p>
+                        <strong>Timing is everything:</strong> I underestimated capital needs at the scaling phase. 
+                        Growing to 44k users organically was exciting, but I needed funding to build the actual gaming 
+                        platform to retain them. The project died not because of lack of interest, but because I 
+                        couldn't capitalize on the momentum.
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <strong>Key takeaway:</strong> Product-market fit isn't enough—you need a clear path to 
+                        monetization and the resources to execute before growth plateaus. This lesson now drives 
+                        how I approach PluggedIn's roadmap and funding strategy.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pluggedin">
+        <div class="container">
+            <h2>Current Project: PluggedIn</h2>
+            <div class="project-card">
+                <h3>UK Marketplace for Skilled Professionals</h3>
+                <p class="project-meta">January 2025 - Present | Product Manager & Founder</p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 15px;">The Opportunity</h4>
+                <p>
+                    Connecting UK residents with verified skilled professionals (plumbers, electricians, cleaners, etc.) 
+                    through a trust-first marketplace. Unlike GoalFi, I'm applying structured PM frameworks from the start.
+                </p>
+                
+                <h4 style="margin-top: 30px; margin-bottom: 15px;">What I'm Doing Differently This Time</h4>
+                <ul style="margin: 20px 0; padding-left: 20px;">
+                    <li style="margin: 10px 0;"><strong>Structured Discovery:</strong> Running user interviews and competitive analysis before building</li>
+                    <li style="margin: 10px 0;"><strong>Clear Prioritization:</strong> Using MoSCoW method to define MVP vs nice-to-haves</li>
+                    <li style="margin: 10px 0;"><strong>Monetization First:</strong> Designed revenue model (escrow payments, subscriptions) upfront</li>
+                    <li style="margin: 10px 0;"><strong>Documentation:</strong> Creating wireframes, user journeys, and product specs using Figma and Miro</li>
+                    <li style="margin: 10px 0;"><strong>Early Validation:</strong> Building waitlist to gauge interest before full development</li>
+                </ul>
+                
+                <p style="margin-top: 20px;">
+                    <strong>Status:</strong> Currently in validation phase. Planning to register business post-MSc studies 
+                    and applying for Innovator Founder Visa to build this in the UK long-term.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Product Management</h4>
+                    <ul>
+                        <li>User Research & Interviews</li>
+                        <li>Problem Validation</li>
+                        <li>MVP Definition</li>
+                        <li>Agile/Scrum Methodology</li>
+                        <li>Roadmap Prioritization</li>
+                        <li>Jobs-to-be-Done Framework</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Growth & Marketing</h4>
+                    <ul>
+                        <li>Zero-Budget Acquisition</li>
+                        <li>Viral Growth Mechanics</li>
+                        <li>Community Building</li>
+                        <li>Content Marketing</li>
+                        <li>Social Media Strategy</li>
+                        <li>Growth Experimentation</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Technical</h4>
+                    <ul>
+                        <li>Web3/Blockchain Fundamentals</li>
+                        <li>Smart Contract Deployment</li>
+                        <li>API Understanding</li>
+                        <li>Basic SQL Concepts</li>
+                        <li>Wireframing (Figma)</li>
+                        <li>Analytics Tools</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h4>Business Strategy</h4>
+                    <ul>
+                        <li>Business Model Design</li>
+                        <li>Competitive Analysis</li>
+                        <li>Go-to-Market Strategy</li>
+                        <li>Financial Modeling</li>
+                        <li>Stakeholder Management</li>
+                        <li>Operations Management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <h2>Let's Build Something Together</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px; opacity: 0.95;">
+                Looking for a product manager who combines hustle with strategy? Let's talk.
+            </p>
+            <a href="mailto:Ezechukwugoziri123@gmail.com" class="btn">Get In Touch</a>
+            <a href="#" class="btn" onclick="alert('CV download link - add your actual CV PDF link here'); return false;">Download CV</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>Ezechukwu Immanuel Anuebunwa | Dundee, Scotland</p>
+            <p style="margin-top: 10px;">
+                Email: Ezechukwugoziri123@gmail.com | Phone: 07823 769 821
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.8;">
+                © 2025 All Rights Reserved
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
